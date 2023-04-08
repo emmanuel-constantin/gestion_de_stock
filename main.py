@@ -6,7 +6,6 @@ from interface import GestionStockGUI
 db = BoutiqueDatabase("localhost", "root", "password")
 produit = Produit(db)
 categorie = Categorie(db)
-categorie.supprimer_toutes_categories()
 categorie.ajouter("Électronique")
 categorie.ajouter("Livres")
 categorie.ajouter("Vêtements")

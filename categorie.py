@@ -23,20 +23,3 @@ class Categorie:
         cursor.close()
         conn.close()
         return categories
-    
-    def supprimer_toutes_categories(self):
-        conn = self.database.create_conn()
-        cursor = conn.cursor()
-        cursor.execute("USE boutique")
-
-        query = """
-            DELETE FROM categorie;
-        """
-        try:
-            cursor.execute(query)
-            conn.commit()
-        except mysql.connector.Error as e:
-            print(f"Erreur: {e}")
-        finally:
-            cursor.close()
-            conn.close()
